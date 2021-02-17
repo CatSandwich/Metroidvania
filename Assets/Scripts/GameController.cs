@@ -1,19 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject Player;
-    // Start is called before the first frame update
+    private GameObject _player;
+    
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _player = GameObject.FindWithTag("Player");
+        PortalController.Init();
     }
 }

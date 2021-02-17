@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="blue">
+        <file id="0" name="blue/blue_glow.png" width="1789" height="1789" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="1" name="blue/inner.png" width="1280" height="1288" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="2" name="blue/outer_1.png" width="2048" height="2030" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="3" name="blue/outer_2.png" width="1730" height="1730" pivot_x="0.5" pivot_y="0.5"/>
+    </folder>
+    <folder id="1" name="green">
+        <file id="0" name="green/green_glow.png" width="1789" height="1789" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="1" name="green/outer_1.png" width="2048" height="2030" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="2" name="green/inner.png" width="1280" height="1288" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="3" name="green/outer_2.png" width="1730" height="1730" pivot_x="0.5" pivot_y="0.5"/>
+    </folder>
+    <folder id="2" name="pink">
+        <file id="0" name="pink/inner.png" width="1280" height="1288" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="1" name="pink/outer_1.png" width="2048" height="2030" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="2" name="pink/outer_2.png" width="1730" height="1730" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="3" name="pink/pink_glow.png" width="1789" height="1789" pivot_x="0.5" pivot_y="0.5"/>
+    </folder>
+    <folder id="3" name="yellow">
+        <file id="0" name="yellow/inner.png" width="1280" height="1288" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="1" name="yellow/outer_1.png" width="2048" height="2030" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="2" name="yellow/outer_2.png" width="1730" height="1730" pivot_x="0.5" pivot_y="0.5"/>
+        <file id="3" name="yellow/yellow_glow.png" width="1789" height="1789" pivot_x="0.5" pivot_y="0.5"/>
+    </folder>
+    <entity id="0" name="blue_portal_effect">
+        <character_map id="0" name="pink">
+            <map folder="0" file="0" target_folder="2" target_file="3"/>
+            <map folder="0" file="1" target_folder="2" target_file="0"/>
+            <map folder="0" file="2" target_folder="2" target_file="1"/>
+            <map folder="0" file="3" target_folder="2" target_file="2"/>
+        </character_map>
+        <character_map id="1" name="yellow">
+            <map folder="0" file="1" target_folder="3" target_file="0"/>
+            <map folder="0" file="2" target_folder="3" target_file="1"/>
+            <map folder="0" file="3" target_folder="3" target_file="2"/>
+            <map folder="0" file="0" target_folder="3" target_file="3"/>
+        </character_map>
+        <character_map id="2" name="green">
+            <map folder="0" file="0" target_folder="1" target_file="0"/>
+            <map folder="0" file="1" target_folder="1" target_file="2"/>
+            <map folder="0" file="3" target_folder="1" target_file="3"/>
+            <map folder="0" file="2" target_folder="1" target_file="1"/>
+        </character_map>
+        <animation id="0" name="large" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="0" z_index="3"/>
+                </key>
+                <key id="1" time="249">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="1" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="1" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="1" z_index="3"/>
+                </key>
+                <key id="2" time="501">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="2" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="2" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="2" z_index="3"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="blue_glow">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-4.545455" y="4.545455" angle="0"/>
+                </key>
+                <key id="1" time="501" spin="0">
+                    <object folder="0" file="0" x="-4.545455" y="4.545455" angle="0" a="0.50345"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="outer_2">
+                <key id="0" spin="-1">
+                    <object folder="0" file="3" x="-4.545455" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249" spin="-1">
+                    <object folder="0" file="3" x="-4.545455" y="-4.545455" angle="270.523121"/>
+                </key>
+                <key id="2" time="501" spin="-1">
+                    <object folder="0" file="3" x="-4.545455" y="-4.545455" angle="178.278082"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="outer_1">
+                <key id="0">
+                    <object folder="0" file="2" x="-4.545455" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249">
+                    <object folder="0" file="2" x="-4.545455" y="-4.545455" angle="89.7754"/>
+                </key>
+                <key id="2" time="501">
+                    <object folder="0" file="2" x="-4.545455" y="-4.545455" angle="182.254708" scale_x="0.958905" scale_y="0.987026"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="inner">
+                <key id="0">
+                    <object folder="0" file="1" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249">
+                    <object folder="0" file="1" y="-4.545455" angle="92.501402"/>
+                </key>
+                <key id="2" time="501">
+                    <object folder="0" file="1" y="-4.545455" angle="182.653521"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="small" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                </key>
+                <key id="1" time="249">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="1" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="1" z_index="2"/>
+                </key>
+                <key id="2" time="502">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="2" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="2" z_index="2"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="blue_glow">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-4.545455" y="4.545455" angle="0"/>
+                </key>
+                <key id="1" time="502" spin="0">
+                    <object folder="0" file="0" x="-4.545455" y="4.545455" angle="0" a="0.50345"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="outer_1">
+                <key id="0" spin="-1">
+                    <object folder="0" file="2" x="-4.545455" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249" spin="-1">
+                    <object folder="0" file="2" x="-4.545455" y="-4.545455" angle="270.354932"/>
+                </key>
+                <key id="2" time="502" spin="-1">
+                    <object folder="0" file="2" x="-11.212121" y="-4.545455" angle="178.684394" scale_x="0.958905" scale_y="0.987026"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="inner">
+                <key id="0">
+                    <object folder="0" file="1" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249">
+                    <object folder="0" file="1" y="-4.545455" angle="92.501402"/>
+                </key>
+                <key id="2" time="502">
+                    <object folder="0" file="1" y="-4.545455" angle="182.653521"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+    <entity id="1" name="pink_portal_effect">
+        <character_map id="0" name="yellow">
+            <map folder="2" file="0" target_folder="3" target_file="0"/>
+            <map folder="2" file="1" target_folder="3" target_file="1"/>
+            <map folder="2" file="2" target_folder="3" target_file="2"/>
+            <map folder="2" file="3" target_folder="3" target_file="3"/>
+        </character_map>
+        <character_map id="1" name="green">
+            <map folder="2" file="3" target_folder="1" target_file="0"/>
+            <map folder="2" file="0" target_folder="1" target_file="2"/>
+            <map folder="2" file="2" target_folder="1" target_file="3"/>
+            <map folder="2" file="1" target_folder="1" target_file="1"/>
+        </character_map>
+        <animation id="0" name="large" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="0" z_index="3"/>
+                </key>
+                <key id="1" time="249">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="1" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="1" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="1" z_index="3"/>
+                </key>
+                <key id="2" time="501">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="2" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="2" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="2" z_index="3"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="blue_glow">
+                <key id="0" spin="0">
+                    <object folder="2" file="3" x="-4.545455" y="4.545455" angle="0"/>
+                </key>
+                <key id="1" time="501" spin="0">
+                    <object folder="2" file="3" x="-4.545455" y="4.545455" angle="0" a="0.50345"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="outer_2">
+                <key id="0" spin="-1">
+                    <object folder="2" file="2" x="-4.545455" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249" spin="-1">
+                    <object folder="2" file="2" x="-4.545455" y="-4.545455" angle="270.523121"/>
+                </key>
+                <key id="2" time="501" spin="-1">
+                    <object folder="2" file="2" x="-4.545455" y="-4.545455" angle="178.278082"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="outer_1">
+                <key id="0">
+                    <object folder="2" file="1" x="-4.545455" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249">
+                    <object folder="2" file="1" x="-4.545455" y="-4.545455" angle="89.7754"/>
+                </key>
+                <key id="2" time="501">
+                    <object folder="2" file="1" x="-4.545455" y="-4.545455" angle="182.254708" scale_x="0.958905" scale_y="0.987026"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="inner">
+                <key id="0">
+                    <object folder="2" file="0" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249">
+                    <object folder="2" file="0" y="-4.545455" angle="92.501402"/>
+                </key>
+                <key id="2" time="501">
+                    <object folder="2" file="0" y="-4.545455" angle="182.653521"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="small" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                </key>
+                <key id="1" time="249">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="1" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="1" z_index="2"/>
+                </key>
+                <key id="2" time="502">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="2" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="2" z_index="2"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="blue_glow">
+                <key id="0" spin="0">
+                    <object folder="2" file="3" x="-4.545455" y="4.545455" angle="0"/>
+                </key>
+                <key id="1" time="502" spin="0">
+                    <object folder="2" file="3" x="-4.545455" y="4.545455" angle="0" a="0.50345"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="outer_1">
+                <key id="0" spin="-1">
+                    <object folder="2" file="1" x="-4.545455" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249" spin="-1">
+                    <object folder="2" file="1" x="-4.545455" y="-4.545455" angle="270.354932"/>
+                </key>
+                <key id="2" time="502" spin="-1">
+                    <object folder="2" file="1" x="-11.212121" y="-4.545455" angle="178.684394" scale_x="0.958905" scale_y="0.987026"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="inner">
+                <key id="0">
+                    <object folder="2" file="0" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249">
+                    <object folder="2" file="0" y="-4.545455" angle="92.501402"/>
+                </key>
+                <key id="2" time="502">
+                    <object folder="2" file="0" y="-4.545455" angle="182.653521"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+    <entity id="2" name="yellow_portal_effect">
+        <character_map id="0" name="pink">
+            <map folder="3" file="3" target_folder="2" target_file="3"/>
+            <map folder="3" file="0" target_folder="2" target_file="0"/>
+            <map folder="3" file="1" target_folder="2" target_file="1"/>
+            <map folder="3" file="2" target_folder="2" target_file="2"/>
+        </character_map>
+        <character_map id="1" name="green">
+            <map folder="3" file="3" target_folder="1" target_file="0"/>
+            <map folder="3" file="0" target_folder="1" target_file="2"/>
+            <map folder="3" file="2" target_folder="1" target_file="3"/>
+            <map folder="3" file="1" target_folder="1" target_file="1"/>
+        </character_map>
+        <animation id="0" name="large" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="0" z_index="3"/>
+                </key>
+                <key id="1" time="249">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="1" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="1" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="1" z_index="3"/>
+                </key>
+                <key id="2" time="501">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="2" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="2" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="2" z_index="3"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="blue_glow">
+                <key id="0" spin="0">
+                    <object folder="3" file="3" x="-4.545455" y="4.545455" angle="0"/>
+                </key>
+                <key id="1" time="501" spin="0">
+                    <object folder="3" file="3" x="-4.545455" y="4.545455" angle="0" a="0.50345"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="outer_2">
+                <key id="0" spin="-1">
+                    <object folder="3" file="2" x="-4.545455" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249" spin="-1">
+                    <object folder="3" file="2" x="-4.545455" y="-4.545455" angle="270.523121"/>
+                </key>
+                <key id="2" time="501" spin="-1">
+                    <object folder="3" file="2" x="-4.545455" y="-4.545455" angle="178.278082"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="outer_1">
+                <key id="0">
+                    <object folder="3" file="1" x="-4.545455" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249">
+                    <object folder="3" file="1" x="-4.545455" y="-4.545455" angle="89.7754"/>
+                </key>
+                <key id="2" time="501">
+                    <object folder="3" file="1" x="-4.545455" y="-4.545455" angle="182.254708" scale_x="0.958905" scale_y="0.987026"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="inner">
+                <key id="0">
+                    <object folder="3" file="0" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249">
+                    <object folder="3" file="0" y="-4.545455" angle="92.501402"/>
+                </key>
+                <key id="2" time="501">
+                    <object folder="3" file="0" y="-4.545455" angle="182.653521"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="small" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                </key>
+                <key id="1" time="249">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="1" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="1" z_index="2"/>
+                </key>
+                <key id="2" time="502">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="2" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="2" z_index="2"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="blue_glow">
+                <key id="0" spin="0">
+                    <object folder="3" file="3" x="-4.545455" y="4.545455" angle="0"/>
+                </key>
+                <key id="1" time="502" spin="0">
+                    <object folder="3" file="3" x="-4.545455" y="4.545455" angle="0" a="0.50345"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="outer_1">
+                <key id="0" spin="-1">
+                    <object folder="3" file="1" x="-4.545455" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249" spin="-1">
+                    <object folder="3" file="1" x="-4.545455" y="-4.545455" angle="270.354932"/>
+                </key>
+                <key id="2" time="502" spin="-1">
+                    <object folder="3" file="1" x="-11.212121" y="-4.545455" angle="178.684394" scale_x="0.958905" scale_y="0.987026"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="inner">
+                <key id="0">
+                    <object folder="3" file="0" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249">
+                    <object folder="3" file="0" y="-4.545455" angle="92.501402"/>
+                </key>
+                <key id="2" time="502">
+                    <object folder="3" file="0" y="-4.545455" angle="182.653521"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+    <entity id="3" name="green_portal_effect">
+        <character_map id="0" name="pink">
+            <map folder="1" file="0" target_folder="2" target_file="3"/>
+            <map folder="1" file="2" target_folder="2" target_file="0"/>
+            <map folder="1" file="1" target_folder="2" target_file="1"/>
+            <map folder="1" file="3" target_folder="2" target_file="2"/>
+        </character_map>
+        <character_map id="1" name="yellow">
+            <map folder="1" file="2" target_folder="3" target_file="0"/>
+            <map folder="1" file="1" target_folder="3" target_file="1"/>
+            <map folder="1" file="3" target_folder="3" target_file="2"/>
+            <map folder="1" file="0" target_folder="3" target_file="3"/>
+        </character_map>
+        <animation id="0" name="large" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="0" z_index="3"/>
+                </key>
+                <key id="1" time="249">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="1" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="1" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="1" z_index="3"/>
+                </key>
+                <key id="2" time="501">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="2" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="2" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="2" z_index="3"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="blue_glow">
+                <key id="0" spin="0">
+                    <object folder="1" file="0" x="-4.545455" y="4.545455" angle="0"/>
+                </key>
+                <key id="1" time="501" spin="0">
+                    <object folder="1" file="0" x="-4.545455" y="4.545455" angle="0" a="0.50345"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="outer_2">
+                <key id="0" spin="-1">
+                    <object folder="1" file="3" x="-4.545455" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249" spin="-1">
+                    <object folder="1" file="3" x="-4.545455" y="-4.545455" angle="270.523121"/>
+                </key>
+                <key id="2" time="501" spin="-1">
+                    <object folder="1" file="3" x="-4.545455" y="-4.545455" angle="178.278082"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="outer_1">
+                <key id="0">
+                    <object folder="1" file="1" x="-4.545455" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249">
+                    <object folder="1" file="1" x="-4.545455" y="-4.545455" angle="89.7754"/>
+                </key>
+                <key id="2" time="501">
+                    <object folder="1" file="1" x="-4.545455" y="-4.545455" angle="182.254708" scale_x="0.958905" scale_y="0.987026"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="inner">
+                <key id="0">
+                    <object folder="1" file="2" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249">
+                    <object folder="1" file="2" y="-4.545455" angle="92.501402"/>
+                </key>
+                <key id="2" time="501">
+                    <object folder="1" file="2" y="-4.545455" angle="182.653521"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="small" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                </key>
+                <key id="1" time="249">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="1" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="1" z_index="2"/>
+                </key>
+                <key id="2" time="502">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="2" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="2" z_index="2"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="blue_glow">
+                <key id="0" spin="0">
+                    <object folder="1" file="0" x="-4.545455" y="4.545455" angle="0"/>
+                </key>
+                <key id="1" time="502" spin="0">
+                    <object folder="1" file="0" x="-4.545455" y="4.545455" angle="0" a="0.50345"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="outer_1">
+                <key id="0" spin="-1">
+                    <object folder="1" file="1" x="-4.545455" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249" spin="-1">
+                    <object folder="1" file="1" x="-4.545455" y="-4.545455" angle="270.354932"/>
+                </key>
+                <key id="2" time="502" spin="-1">
+                    <object folder="1" file="1" x="-11.212121" y="-4.545455" angle="178.684394" scale_x="0.958905" scale_y="0.987026"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="inner">
+                <key id="0">
+                    <object folder="1" file="2" y="-4.545455" angle="0"/>
+                </key>
+                <key id="1" time="249">
+                    <object folder="1" file="2" y="-4.545455" angle="92.501402"/>
+                </key>
+                <key id="2" time="502">
+                    <object folder="1" file="2" y="-4.545455" angle="182.653521"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
