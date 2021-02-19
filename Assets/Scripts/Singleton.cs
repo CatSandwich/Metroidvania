@@ -6,7 +6,7 @@ public class Singleton : MonoBehaviour
 {
     private static Singleton _singleton;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (_singleton != null)
         {
@@ -15,5 +15,6 @@ public class Singleton : MonoBehaviour
         }
 
         _singleton = this;
+        DontDestroyOnLoad(gameObject);
     }
 }

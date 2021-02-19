@@ -10,6 +10,5 @@ public class GameController : MonoBehaviour
     void Start()
     {
         _player = GameObject.FindWithTag("Player");
-        PortalController.Init();
     }
 }

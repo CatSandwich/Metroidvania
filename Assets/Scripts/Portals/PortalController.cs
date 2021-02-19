@@ -7,16 +7,25 @@ public class PortalController : MonoBehaviour
     public static string CurrentLevel;
     public string DestinationLevel;
     
-    private GameObject _player;
+    private static GameObject _player;
 
+    private static bool _isInit;
     public static void Init()
     {
+        _isInit = true;
         SceneManager.sceneLoaded += _sceneLoaded;
         CurrentLevel = SceneManager.GetActiveScene().name;
+        _player = GameObject.FindWithTag("Player");
+    }
+
+    public void Start()
+    {
+        if (!_isInit) Init();
     }
     
     public void Enter()
     {
+        _player.GetComponent<PlayerController>().EntityInteract -= Enter;
         SceneManager.LoadScene(DestinationLevel);
     }
 
@@ -35,18 +44,17 @@ public class PortalController : MonoBehaviour
     private static void _sceneLoaded(Scene scene, LoadSceneMode sceneLoadInfo)
     {
         var portals = FindObjectsOfType<PortalController>();
-        
         var portal = portals.First(p => p.DestinationLevel == CurrentLevel);
-        var player = FindObjectOfType<PlayerController>().gameObject;
 
         var v3 = portal.transform.position;
 
         var portalHeight = portal.GetComponent<SpriteRenderer>().bounds.size.y;
-        var playerHeight = player.GetComponent<SpriteRenderer>().bounds.size.y;
+        var playerHeight = _player.GetComponent<SpriteRenderer>().bounds.size.y;
 
         v3.y -= (portalHeight - playerHeight) / 2;
+        v3.z = _player.transform.position.z;
         
-        player.transform.position = v3;
+        _player.transform.position = v3;
 
         CurrentLevel = scene.name;
     }
