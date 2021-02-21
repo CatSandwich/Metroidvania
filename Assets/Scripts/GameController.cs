@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour
+namespace Assets.Scripts
 {
-    private GameObject _player;
-    
-    void Start()
+    public class GameController : MonoBehaviour
     {
-        _player = GameObject.FindWithTag("Player");
+    
+        void Start()
+        {
+            
+        }
     }
 }

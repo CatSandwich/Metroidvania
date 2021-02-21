@@ -1,6 +1,5 @@
 using System;
 using System.ComponentModel;
-using Portal;
 using UnityEngine;
 
 namespace Portals
@@ -58,7 +57,7 @@ namespace Portals
             SR.transform.localScale = new Vector3(x, y, _startScale.z);
         }
 
-        private void _rotate(Transform t, float? x, float? y, float? z, RotateType type)
+        private static void _rotate(Transform t, float? x, float? y, float? z, RotateType type)
         {
             var euler = t.eulerAngles;
             t.eulerAngles = type switch

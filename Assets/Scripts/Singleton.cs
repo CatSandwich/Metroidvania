@@ -1,20 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Singleton : MonoBehaviour
+namespace Assets.Scripts
 {
-    private static Singleton _singleton;
-    // Start is called before the first frame update
-    void Awake()
+    public class Singleton : MonoBehaviour
     {
-        if (_singleton != null)
+        private static Singleton _singleton;
+        // Start is called before the first frame update
+        void Awake()
         {
-            Destroy(gameObject);
-            return;
-        }
+            if (_singleton != null)
+            {
+                Destroy(gameObject);
+                return;
+            }
 
-        _singleton = this;
-        DontDestroyOnLoad(gameObject);
+            _singleton = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

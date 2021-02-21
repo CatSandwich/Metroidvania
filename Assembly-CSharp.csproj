@@ -56,15 +56,24 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Portals\PortalScriptable.cs" />
-    <Compile Include="Assets\Scripts\Player\FallFaster.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerAnimator.cs" />
-    <Compile Include="Assets\Scripts\GameController.cs" />
-    <Compile Include="Assets\Scripts\Portals\PortalAnimator.cs" />
-    <Compile Include="Assets\Scripts\Portals\PortalController.cs" />
-    <Compile Include="Assets\Scripts\Singleton.cs" />
+    <Compile Include="Assets\Scripts\Entity\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\BackgroundAnimator.cs" />
+    <Compile Include="Assets\Scripts\Entity\Player\FallFaster.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Entity\Portals\PortalAnimator.cs" />
+    <Compile Include="Assets\Scripts\Entity\Portals\PortalController.cs" />
+    <Compile Include="Assets\Scripts\Singleton.cs" />
+    <Compile Include="Assets\Scripts\Entity\Player\EventArgs\EntityInteract.cs" />
+    <Compile Include="Assets\Scripts\Entity\Player\EventArgs\Jump.cs" />
+    <Compile Include="Assets\Scripts\Entity\Player\EventArgs\Run.cs" />
+    <Compile Include="Assets\Scripts\Entity\Player\EventArgs\MetroidEventArgs.cs" />
+    <Compile Include="Assets\Scripts\Entity\Player\EventArgs\LandEventArgs.cs" />
+    <Compile Include="Assets\Scripts\Entity\PlayerInteractable.cs" />
+    <Compile Include="Assets\Scripts\Entity\Player\EventArgs\Attack.cs" />
+    <Compile Include="Assets\Scripts\Entity\Player\AttackType.cs" />
+    <Compile Include="Assets\Scripts\Entity\Enemy\Fighter.cs" />
+    <Compile Include="Assets\Scripts\Entity\IgnoreCollision.cs" />
+    <Compile Include="Assets\Scripts\Entity\Enemy\FighterAnimator.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Sprites\Portal\info.TXT" />
