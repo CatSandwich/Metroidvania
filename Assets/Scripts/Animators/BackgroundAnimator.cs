@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Assets.Scripts
+namespace Animators
 {
     public class BackgroundAnimator : MonoBehaviour
     {
