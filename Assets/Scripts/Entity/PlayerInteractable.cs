@@ -5,17 +5,14 @@ using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.Entity
 {
-    public class PlayerInteractible : MonoBehaviour
+    public abstract class PlayerInteractible : MonoBehaviour
     {
         private PlayerController Player => _player ??= GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         private PlayerController _player;
 
         private bool _isInit = false;
 
-        public virtual void PlayerInteract(object sender, EntityInteractEventArgs e)
-        {
-            Debug.LogError("PlayerInteract not overridden in PlayerInteractible");
-        }
+        public abstract void PlayerInteract(object sender, EntityInteractEventArgs e);
 
         private void OnTriggerEnter2D(Collider2D other)
         {

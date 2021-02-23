@@ -1,10 +1,9 @@
 using Assets.Scripts.Entity.Player.EventArgs;
 using System;
 using System.Collections;
-using System.Xml;
+using Assets.Scripts.Entity.Hitbox;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Random = System.Random;
 
 namespace Assets.Scripts.Entity.Player
 {
@@ -24,13 +23,6 @@ namespace Assets.Scripts.Entity.Player
         public AnimationClip AttackAnimation;
         #endregion
 
-        #region Movement Modifiers
-        public float Speed;
-        public float JumpVelocity;
-        public float VelocityCap;
-        public short MaxJumps;
-        #endregion
-
         #region Temporary KeyCode Settings
         public KeyCode KRunLeft;
         public KeyCode KRunRight;
@@ -40,7 +32,18 @@ namespace Assets.Scripts.Entity.Player
         public MouseButton MShoot;
         #endregion
 
-        #region Events
+        #region Stats
+        public float Speed;
+        public float JumpVelocity;
+        public float VelocityCap;
+        public short MaxJumps;
+
+        public int MaxHealth;
+
+        public GameObject SwordHit;
+        #endregion
+
+        #region Event Declarations
         public event EventHandler<RunEventArgs> Run;
         public event EventHandler<JumpEventArgs> Jump;
         public event EventHandler<LandEventArgs> Land;
@@ -53,7 +56,9 @@ namespace Assets.Scripts.Entity.Player
         private bool _isAttacking;
         private bool _isGrounded;
 
-        private Random _random;
+        private int _health;
+
+        private System.Random _random;
         #endregion
 
         #region Unity Events
@@ -65,7 +70,9 @@ namespace Assets.Scripts.Entity.Player
             
             _jumps = MaxJumps;
             _isAttacking = false;
-            _random = new Random();
+            _random = new System.Random();
+
+            _health = MaxHealth;
 
             Attack += (sender, e) =>
             {
@@ -143,19 +150,25 @@ namespace Assets.Scripts.Entity.Player
         {
             _isAttacking = true;
             Run += cancelMove;
-            
-            static void cancelMove(object sender, RunEventArgs e)
-            {
-                if(e.Grounded) 
-                    e.PreventDefault();
-            }
 
             _animateAttack(type);
             yield return new WaitForSeconds(AttackAnimation.length);
             _animateIdle();
 
+            var hit = Instantiate(SwordHit);
+            hit.transform.position = transform.position;
+            hit.transform.position += new Vector3(transform.localScale.x, 0.25f, 0f);
+            var bc = hit.GetComponent<BoxCollider2D>();
+            bc.size = new Vector2(1f, 2f);
+
             Run -= cancelMove;
             _isAttacking = false;
+
+            static void cancelMove(object sender, RunEventArgs e)
+            {
+                if (e.Grounded)
+                    e.PreventDefault();
+            }
         }
         #endregion
 
@@ -188,6 +201,15 @@ namespace Assets.Scripts.Entity.Player
         }
         #endregion
 
+        #region Combat
+
+        public void TakeDamage(int damage)
+        {
+            _health -= damage;
+            //print($"Health: {_health}");
+        }
+        #endregion
+
         #region Helpers
         private void _cap<T>(ref T value, T min, T max) where T : struct, IComparable
         {
@@ -212,5 +234,12 @@ namespace Assets.Scripts.Entity.Player
         private void _animateIdle() => _animator.SetTrigger("Idle");
 
         #endregion
+    }
+    enum AttackType
+    {
+        Attack1,
+        Attack2,
+        AttackCrit,
+        AttackShoot
     }
 }

@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9165696537095666041}
   - component: {fileID: 893824739252764805}
-  m_Layer: 0
+  - component: {fileID: 2018919389950686674}
+  - component: {fileID: 4810129865514594075}
+  m_Layer: 10
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,6 +59,41 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2, y: 1.59}
   m_EdgeRadius: 0
+--- !u!114 &2018919389950686674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364935124236729095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d49241bf88c67943b459ee3e07c3078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitboxCooldown: 2
+  Controller: {fileID: 7581493236885557215}
+--- !u!50 &4810129865514594075
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364935124236729095}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7581493236885557213
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,8 +107,8 @@ GameObject:
   - component: {fileID: 7581493236885557153}
   - component: {fileID: 7581493236885557214}
   - component: {fileID: 7581493236885557215}
-  - component: {fileID: 4015745486040881960}
   - component: {fileID: 4533357503992816137}
+  - component: {fileID: 4004803555043126105}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -204,34 +241,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7663c13ff90bdf64a8d64cea8a006a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RB: {fileID: 7581493236885557214}
-  Animator: {fileID: 4533357503992816137}
   AttackAnimation: {fileID: 7400000, guid: 45b51bc73f469744d833b582431c6ba4, type: 2}
-  Speed: 5
-  JumpVelocity: 6
-  VelocityCap: 8
-  MaxJumps: 2
   KRunLeft: 97
   KRunRight: 100
   KJump: 32
   KEntityInteract: 115
   MAttack: 0
   MShoot: 1
---- !u!114 &4015745486040881960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7581493236885557213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 484dce50b05591248b20d8750ce0248d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RB: {fileID: 7581493236885557214}
-  UpwardsScale: 1
-  DownwardsScale: 2
+  Speed: 5
+  JumpVelocity: 6
+  VelocityCap: 8
+  MaxJumps: 2
+  MaxHealth: 10
+  SwordHit: {fileID: 5990735347807156383, guid: 3c6ef82f5b934b84b89fd5d88939f62d, type: 3}
 --- !u!95 &4533357503992816137
 Animator:
   serializedVersion: 3
@@ -251,3 +273,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4004803555043126105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7581493236885557213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 484dce50b05591248b20d8750ce0248d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RB: {fileID: 7581493236885557214}
+  UpwardsScale: 1
+  DownwardsScale: 2

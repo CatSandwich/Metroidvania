@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Entity.Player.EventArgs
+﻿namespace Assets.Scripts
 {
     public class MetroidEventArgs
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallFaster : MonoBehaviour
+public class PlayerFallFaster : MonoBehaviour
 {
     public Rigidbody2D RB;
     public float UpwardsScale;
