@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Surface
+  - Terrain
   layers:
   - Default
   - TransparentFX
@@ -12,7 +12,7 @@ TagManager:
   - Ignore Collision
   - Water
   - UI
-  - 
+  - Terrain
   - 
   - 
   - 

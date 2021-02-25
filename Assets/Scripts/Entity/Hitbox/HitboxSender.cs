@@ -1,9 +1,8 @@
 using System;
-using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-namespace Assets.Scripts.Entity.Hitbox
+namespace Entity.Hitbox
 {
     public abstract class HitboxSender : MonoBehaviour
     {

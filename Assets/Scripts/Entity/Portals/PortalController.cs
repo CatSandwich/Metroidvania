@@ -1,9 +1,9 @@
 using System.Linq;
-using Assets.Scripts.Entity.Player.EventArgs;
+using Entity.Player.EventArgs;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.Scripts.Entity.Portals
+namespace Entity.Portals
 {
     public class PortalController : PlayerInteractible
     {

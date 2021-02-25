@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using UnityEngine;
 
-namespace Portals
+namespace Entity.Portals
 {
     public class PortalAnimator : MonoBehaviour
     {
@@ -20,14 +20,14 @@ namespace Portals
         
         private Vector2 _scale;
         private Vector3 _startScale;
-        
-        void Start()
+
+        private void Start()
         {
             _tilt = new Vector2(0f, 0f);
             _startScale = SR.transform.localScale;
         }
 
-        void FixedUpdate()
+        private void FixedUpdate()
         {
             _updateRotation();
             _updateScale();
@@ -71,8 +71,8 @@ namespace Portals
 
         private static float _sin(float f) => (float) Math.Sin(f / 180 * Math.PI);
         private static float _mod(float degree, float magnitude) => _sin(degree) * magnitude + 1;
-        
-        enum RotateType
+
+        private enum RotateType
         {
             Add,
             Subtract,

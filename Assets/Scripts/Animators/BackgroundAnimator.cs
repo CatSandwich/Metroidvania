@@ -15,7 +15,7 @@ namespace Animators
         private GameObject _player;
         private Vector3[] _startPositions;
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             _player = GameObject.FindWithTag("Player");
             _startPositions = Layers.Select(l => l.transform.position).ToArray();
@@ -40,7 +40,7 @@ namespace Animators
         }
     
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             for (var i = 0; i < Layers.Length; i++)
             {

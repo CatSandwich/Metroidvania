@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using Assets.Scripts.Entity.Hitbox;
-using UnityEngine;
+using Entity.Hitbox;
 
-public class FighterSender : HitboxSender
+namespace Entity.Enemy.Fighter
 {
+    public class FighterSender : HitboxSender
+    {
     
+    }
 }

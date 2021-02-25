@@ -1,4 +1,4 @@
-namespace Assets.Scripts.Entity.Player.EventArgs
+namespace Entity.Player.EventArgs
 {
     public class EntityInteractEventArgs
     {

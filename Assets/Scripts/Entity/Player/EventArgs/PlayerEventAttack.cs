@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Helpers;
 
-namespace Assets.Scripts.Entity.Player.EventArgs
+namespace Entity.Player.EventArgs
 {
     public class AttackEventArgs : MetroidEventArgs
     {

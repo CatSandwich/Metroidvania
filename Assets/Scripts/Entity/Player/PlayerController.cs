@@ -1,11 +1,11 @@
-using Assets.Scripts.Entity.Player.EventArgs;
 using System;
 using System.Collections;
-using Assets.Scripts.Entity.Hitbox;
+using Entity.Player.EventArgs;
+using Helpers.Mask;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Assets.Scripts.Entity.Player
+namespace Entity.Player
 {
     public class PlayerController : MonoBehaviour
     {
@@ -62,7 +62,8 @@ namespace Assets.Scripts.Entity.Player
         #endregion
 
         #region Unity Events
-        void Start()
+
+        private void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
             _sr = GetComponent<SpriteRenderer>();
@@ -81,17 +82,20 @@ namespace Assets.Scripts.Entity.Player
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             
             _rb.velocity = StopX;
             _handleInput();
             _animate();
         }
-    
-        void OnCollisionEnter2D(Collision2D other)
+
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            if (!other.gameObject.CompareTag("Surface")) return;
+            var mask = new MetroidMask(other.gameObject, ~0, "Terrain");
+            if (!mask.HasTag) return;
+            
+            if (!CollisionDirection.CheckDirection(gameObject, other.gameObject, Vector2.down)) return;
             _onLand();
         }
         #endregion
@@ -235,7 +239,8 @@ namespace Assets.Scripts.Entity.Player
 
         #endregion
     }
-    enum AttackType
+
+    internal enum AttackType
     {
         Attack1,
         Attack2,

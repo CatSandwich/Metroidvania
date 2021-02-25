@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Entity.Player
+﻿namespace Entity.Player
 {
 
 }

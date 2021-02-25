@@ -1,20 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class FighterAnimator : MonoBehaviour
+namespace Entity.Enemy.Fighter
 {
-    private Animator _animator;
-    private Rigidbody2D _rb;
-    void Start()
+    public class FighterAnimator : MonoBehaviour
     {
-        _animator = GetComponent<Animator>();
-        _rb = GetComponent<Rigidbody2D>();
-    }
+        private Animator _animator;
+        private Rigidbody2D _rb;
 
-    // Update is called once per frame
-    void Update()
-    {
-        _animator.SetFloat("SpeedX", Mathf.Abs(_rb.velocity.x));
+        private void Start()
+        {
+            _animator = GetComponent<Animator>();
+            _rb = GetComponent<Rigidbody2D>();
+        }
+
+        // Update is called once per frame
+        private void Update()
+        {
+            var s = transform.localScale;
+            if (_rb.velocity.x < 0f) s.x = -1f;
+            if (_rb.velocity.x < 0f) s.x = 1f;
+            transform.localScale = s;
+            _animator.SetFloat("SpeedX", Mathf.Abs(_rb.velocity.x));
+        }
     }
 }

@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
-using UnityEditor.Animations;
+using Entity.Hitbox;
 using UnityEngine;
 
-namespace Assets.Scripts.Entity.Hitbox
+namespace Entity.Player
 {
     public class PlayerSenderSword : HitboxSender
     {

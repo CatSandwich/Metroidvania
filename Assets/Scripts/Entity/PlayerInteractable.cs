@@ -1,9 +1,9 @@
-using Assets.Scripts.Entity.Player;
-using Assets.Scripts.Entity.Player.EventArgs;
+using Entity.Player;
+using Entity.Player.EventArgs;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.Scripts.Entity
+namespace Entity
 {
     public abstract class PlayerInteractible : MonoBehaviour
     {

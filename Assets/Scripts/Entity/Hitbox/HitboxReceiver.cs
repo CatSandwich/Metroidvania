@@ -1,7 +1,8 @@
 using System;
+using Animators;
 using UnityEngine;
 
-namespace Assets.Scripts.Entity.Hitbox
+namespace Entity.Hitbox
 {
     public abstract class HitboxReceiver : MonoBehaviour
     {

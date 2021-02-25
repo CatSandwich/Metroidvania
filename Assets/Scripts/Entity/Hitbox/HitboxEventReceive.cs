@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Assets.Scripts.Entity.Player.EventArgs;
+﻿using Helpers;
 
-namespace Assets.Scripts.Entity.Hitbox
+namespace Entity.Hitbox
 {
     public class ReceiveHitEventArgs : MetroidEventArgs
     {

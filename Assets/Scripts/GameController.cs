@@ -1,13 +1,9 @@
 using UnityEngine;
 
-namespace Assets.Scripts
+public class GameController : MonoBehaviour
 {
-    public class GameController : MonoBehaviour
+    private void Start()
     {
-    
-        void Start()
-        {
             
-        }
     }
 }

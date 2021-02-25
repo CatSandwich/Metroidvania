@@ -1,4 +1,6 @@
-﻿namespace Assets.Scripts.Entity.Player.EventArgs
+﻿using Helpers;
+
+namespace Entity.Player.EventArgs
 {
     public class JumpEventArgs : MetroidEventArgs
     {
