@@ -166,6 +166,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hits:
   - Slime
+  - Bat
+  - Shield Skeleton
+  - Spider
   Damage: 5
   OneHit: 0
   Verbose: 0
