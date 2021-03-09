@@ -1,9 +1,11 @@
+using Helpers.Mask;
 using UnityEngine;
 
 namespace Entity.Enemy
 {
     public class EnemyWallBounce : MonoBehaviour
     {
+        private static MetroidMask TerrainMask => new MetroidMask("Terrain");
         public Rigidbody2D RB;
 
         private float _velocity;
@@ -17,7 +19,9 @@ namespace Entity.Enemy
         // Start is called before the first frame update
         public void OnCollisionEnter2D(Collision2D other)
         {
-            if (!other.gameObject.CompareTag("Terrain")) return;
+            var mask = TerrainMask;
+            mask.GO = other.gameObject;
+            if (!mask.HasLayer) return;
 
             var isLeft = CollisionDirection.CheckDirection(gameObject, other.gameObject, Vector2.left);
             var isRight = CollisionDirection.CheckDirection(gameObject, other.gameObject, Vector2.right);

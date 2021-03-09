@@ -1,5 +1,7 @@
 using System;
 using System.Linq;
+using Helpers.Mask;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace Entity.Hitbox
@@ -13,39 +15,46 @@ namespace Entity.Hitbox
         public event EventHandler<SendHitEventArgs> SendHit;
 
         private Rigidbody2D _rb;
-        private int[] _hits;
 
-
+        private MetroidMask _mask;
+        
         // Start is called before the first frame update
         protected void Awake()
         {
-            _hits = Hits.Select(LayerMask.NameToLayer).ToArray();
-            if (Verbose) foreach (var hit in Hits) print($"[Verbose] {gameObject.name} hits {hit}");
-            if (Verbose) foreach(var hit in _hits) print($"[Verbose] {gameObject.name} hits {hit}");
-
+            _mask = new MetroidMask(Hits, null);
+            
             _rb = GetComponent<Rigidbody2D>();
+            if (!_rb) Debug.LogError("Hitbox missing RigidBody2D component");
             _rb.sleepMode = RigidbodySleepMode2D.NeverSleep;
             _rb.bodyType = RigidbodyType2D.Kinematic;
-            if (!_rb) Debug.LogError("Hitbox missing RigidBody2D component");
 
             if (OneHit) SendHit += (sender, e) => { Destroy(gameObject); };
-            
-            if(Verbose) print($"[Verbose] {gameObject.name}: Awake()");
+
+            _verbose($"[Verbose] {gameObject.name}: Awake()");
         }
-        
+
         public virtual void OnTriggerStay2D(Collider2D other)
         {
-            if (Verbose) print($"[Verbose] {gameObject.name}: Trigger stay. Other: {other.gameObject.name}");
-            if (!_hits.Contains(other.gameObject.layer)) return;
-            if (Verbose) print($"[Verbose] {gameObject.name}: Triggered layer in hit list");
+            //_verbose($"[Verbose] {gameObject.name}: Trigger stay. Other: {other.gameObject.name}");
+
+            _mask.GO = other.gameObject;
+            if (!_mask.HasLayer) return;
+            
+            //_verbose($"[Verbose] {gameObject.name}: Triggered layer in hit list");
 
             var e = new SendHitEventArgs(Damage);
-            if (Verbose) print($"[Verbose] {gameObject.name}: Invoking event");
+            //_verbose($"[Verbose] {gameObject.name}: Invoking event");
             SendHit?.Invoke(this, e);
+            if (!e.Default) return;
 
-            if (Verbose) print($"[Verbose] {gameObject.name}: Sending hit to receiver");
+            //_verbose($"[Verbose] {gameObject.name}: Sending hit to receiver");
             var hit = other.gameObject.GetComponent<HitboxReceiver>()?.OnReceiveHit(e.Damage);
             //TODO: separate hit into two events, one for before sending, one for if successful
+        }
+
+        private void _verbose(string msg)
+        {
+            if (Verbose) print(msg);
         }
     }
 }

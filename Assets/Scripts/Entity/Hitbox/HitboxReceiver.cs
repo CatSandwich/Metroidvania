@@ -13,7 +13,7 @@ namespace Entity.Hitbox
         public float HitboxCooldown;
         private float? _lastHit = null;
         
-        public virtual bool OnReceiveHit(int damage)
+        public bool OnReceiveHit(int damage)
         {
             var e = new ReceiveHitEventArgs(damage);
             ReceiveHit?.Invoke(this, e);

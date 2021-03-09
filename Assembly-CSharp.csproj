@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{7B39237E-EB72-FD6B-2E8B-43A009CC29FC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -59,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Entity\Player\EventArgs\PlayerEventRun.cs" />
     <Compile Include="Assets\Scripts\Entity\Hitbox\HitboxReceiver.cs" />
+    <Compile Include="Assets\Scripts\Helpers\Mask\MetroidTagMask.cs" />
     <Compile Include="Assets\Scripts\Entity\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Entity\Player\EventArgs\PlayerEventJump.cs" />
     <Compile Include="Assets\Scripts\Entity\Enemy\Fighter\FighterAnimator.cs" />
@@ -68,50 +68,57 @@
     <Compile Include="Assets\Scripts\Entity\Enemy\Fighter\FighterSender.cs" />
     <Compile Include="Assets\Scripts\Entity\Player\EventArgs\PlayerEventAttack.cs" />
     <Compile Include="Assets\Scripts\Entity\Player\AttackType.cs" />
+    <Compile Include="Assets\Scripts\Helpers\Mask\MetroidLayerMask.cs" />
+    <Compile Include="Assets\Scripts\CollisionDirection.cs" />
+    <Compile Include="Assets\Scripts\Entity\Enemy\Bat\BatController.cs" />
     <Compile Include="Assets\Scripts\Entity\Enemy\Fighter\FighterController.cs" />
     <Compile Include="Assets\Scripts\Entity\Player\EventArgs\PlayerEventLand.cs" />
     <Compile Include="Assets\Scripts\Animators\BackgroundAnimator.cs" />
+    <Compile Include="Assets\Scripts\Entity\Enemy\Bat\BatReceiver.cs" />
     <Compile Include="Assets\Scripts\Entity\Player\PlayerFallFaster.cs" />
+    <Compile Include="Assets\Scripts\Entity\Enemy\Bat\BatSender.cs" />
     <Compile Include="Assets\Scripts\Entity\PlayerInteractable.cs" />
     <Compile Include="Assets\Scripts\Entity\Player\PlayerSenderSword.cs" />
     <Compile Include="Assets\Scripts\Entity\Hitbox\HitboxEventReceive.cs" />
     <Compile Include="Assets\Scripts\Entity\Player\PlayerReceiver.cs" />
+    <Compile Include="Assets\Scripts\Helpers\Mask\MaskTest.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Helpers\Mask\MetroidMask.cs" />
     <Compile Include="Assets\Scripts\Entity\Portals\PortalAnimator.cs" />
     <Compile Include="Assets\Scripts\Entity\Portals\PortalController.cs" />
-    <Compile Include="Assets\Scripts\Helpers\Mask\MetroidLayerMask.cs" />
-    <Compile Include="Assets\Scripts\Helpers\Mask\MetroidMask.cs" />
-    <Compile Include="Assets\Scripts\Helpers\Mask\MetroidTagMask.cs" />
     <Compile Include="Assets\Scripts\Helpers\Singleton.cs" />
     <Compile Include="Assets\Scripts\Helpers\MetroidEventArgs.cs" />
     <Compile Include="Assets\Scripts\Entity\Hitbox\HitboxEventSend.cs" />
     <Compile Include="Assets\Scripts\Entity\Enemy\Fighter\FighterReceiver.cs" />
     <Compile Include="Assets\Scripts\Entity\Enemy\EnemyWallBounce.cs" />
-    <Compile Include="Assets\Scripts\CollisionDirection.cs" />
+    <Compile Include="Assets\Scripts\Entity\Enemy\Skeleton\SkeletonController.cs" />
+    <Compile Include="Assets\Scripts\Entity\Enemy\Skeleton\SkeletonReceiver.cs" />
+    <Compile Include="Assets\Scripts\Entity\Enemy\Skeleton\SkeletonSender.cs" />
+    <Compile Include="Assets\Scripts\Entity\Enemy\Skeleton\SkeletonAnimator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Sprites\Portal\info.TXT" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\Sprites\Portal\info.TXT" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.4f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -767,7 +774,8 @@
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

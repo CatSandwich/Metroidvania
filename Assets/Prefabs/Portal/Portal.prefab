@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SR: {fileID: 9084485693107012636}
   RotateSpeed: 1
-  TiltMagnitude: {x: 30, y: 20}
+  TiltMagnitude: {x: 30, y: 30}
   TiltSpeed: {x: 1, y: 2}
   ScaleSpeed: {x: 0.2, y: 0.3}
   ScaleMagnitude: {x: 0.2, y: 0.3}

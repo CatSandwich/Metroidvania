@@ -9,6 +9,7 @@ namespace Entity.Enemy.Fighter
         public BoxCollider2D TriggerBc;
         public AnimationClip DeathAnimation;
         public Animator Animator;
+        
         private Rigidbody2D _rb;
         private BoxCollider2D _bc;
         private SpriteRenderer _sr;
@@ -41,7 +42,6 @@ namespace Entity.Enemy.Fighter
         public void TakeDamage(int damage)
         {
             _health -= damage;
-            print(_health);
             if (_health <= 0) StartCoroutine(_die());
         }
 
@@ -49,7 +49,9 @@ namespace Entity.Enemy.Fighter
         {
             _rb.velocity = Vector2.zero;
             _rb.isKinematic = true;
+            
             foreach (var bc in GetComponentsInChildren<BoxCollider2D>()) bc.enabled = false;
+            
             Animator.SetTrigger("Death");
             yield return new WaitForSeconds(DeathAnimation.length);
             Destroy(gameObject);

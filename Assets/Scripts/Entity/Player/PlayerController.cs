@@ -9,6 +9,8 @@ namespace Entity.Player
 {
     public class PlayerController : MonoBehaviour
     {
+        private static MetroidMask TerrainMask => new MetroidMask("Terrain", null);
+        
         #region Constants
         public Vector3 Normal => new Vector3(1f, 1f, 1f);
         public Vector3 Flipped => new Vector3(-1f, 1f, 1f);
@@ -92,8 +94,9 @@ namespace Entity.Player
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            var mask = new MetroidMask(other.gameObject, ~0, "Terrain");
-            if (!mask.HasTag) return;
+            var mask = TerrainMask;
+            mask.GO = other.gameObject;
+            if (!mask.HasLayer) return;
             
             if (!CollisionDirection.CheckDirection(gameObject, other.gameObject, Vector2.down)) return;
             _onLand();
@@ -138,6 +141,7 @@ namespace Entity.Player
         private void _onAttack()
         {
             if (_isAttacking) return;
+            
             var e = new AttackEventArgs();
             Attack?.Invoke(this, e);
             if (!e.Default) return;

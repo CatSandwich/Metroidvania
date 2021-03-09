@@ -6,19 +6,12 @@ namespace Helpers.Mask
 {
     internal class MetroidMask
     {
-        #region Static MetroidMask Properties
-        public static MetroidMask TerrainMask =>
-            new MetroidMask(null, "Terrain");
-        public static MetroidMask PlayerMask => 
-            new MetroidMask("Player", "Player");
-        #endregion
-
         #region Cached Comparisons
         public bool HasBoth => _hasBoth ??= HasTag && HasLayer;
         private bool? _hasBoth;
         public bool HasEither => _hasEither ??= HasTag || HasLayer;
         private bool? _hasEither;
-        public bool HasLayer => _hasLayer ??= _containsLayer(_go.tag);
+        public bool HasLayer => _hasLayer ??= _containsLayer(_go.layer);
         private bool? _hasLayer;
         public bool HasTag => _hasTag ??= _containsTag(_go.tag);
         private bool? _hasTag;
@@ -41,7 +34,7 @@ namespace Helpers.Mask
         #endregion
         
         #region Constructors
-        public MetroidMask([CanBeNull] MetroidLayerMask layerMask, [CanBeNull] MetroidTagMask tagMask, GameObject go = null)
+        public MetroidMask([CanBeNull] MetroidLayerMask layerMask, [CanBeNull] MetroidTagMask tagMask = null, GameObject go = null)
         {
             LayerMask = layerMask ?? ~0;
             TagMask = tagMask ?? new string[]{};

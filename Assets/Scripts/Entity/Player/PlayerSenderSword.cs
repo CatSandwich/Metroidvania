@@ -8,6 +8,7 @@ namespace Entity.Player
     {
         public Animator Animator;
         public AnimationClip AttackAnimation;
+        
         public void Start()
         {
             StartCoroutine(_attack());

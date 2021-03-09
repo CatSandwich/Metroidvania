@@ -1,6 +1,8 @@
-﻿namespace Entity.Hitbox
+﻿using Helpers;
+
+namespace Entity.Hitbox
 {
-    public class SendHitEventArgs
+    public class SendHitEventArgs : MetroidEventArgs
     {
         public int Damage;
 
