@@ -10,9 +10,9 @@ namespace Helpers.Mask
         private bool? _hasBoth;
         public bool HasEither => _hasEither ??= HasTag || HasLayer;
         private bool? _hasEither;
-        public bool HasLayer => _hasLayer ??= _containsLayer(_go.layer);
+        public bool HasLayer => _hasLayer ??= _layerMask.Contains(_go.layer);
         private bool? _hasLayer;
-        public bool HasTag => _hasTag ??= _containsTag(_go.tag);
+        public bool HasTag => _hasTag ??= _tagMask.Contains(_go.tag);
         private bool? _hasTag;
         #endregion
 
@@ -50,10 +50,6 @@ namespace Helpers.Mask
         public void RemoveLayer(string layer) => _layerMask.Remove(layer);
         public void RemoveLayer(int layer) => _layerMask.Remove(layer);
         public void RemoveTag(string tag) => _tagMask.Remove(tag);
-
-        private bool _containsLayer(int layer) => _layerMask.Contains(layer);
-        private bool _containsLayer(string layer) => _layerMask.Contains(layer);
-        private bool _containsTag(string tag) => _tagMask.Contains(tag);
 
         private void _resetCache()
         {
