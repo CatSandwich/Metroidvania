@@ -60,8 +60,10 @@
      <Compile Include="Assets\Scripts\Animators\DamageIndicator.cs" />
      <Compile Include="Assets\Scripts\Entity\Enemy\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Entity\Hitbox\HitboxSender.cs" />
+     <Compile Include="Assets\Scripts\Entity\Ambient\AmbientController.cs" />
      <Compile Include="Assets\Scripts\Entity\Player\EventArgs\PlayerEventEntityInteract.cs" />
      <Compile Include="Assets\Scripts\Entity\Player\EventArgs\PlayerEventAttack.cs" />
+     <Compile Include="Assets\Scripts\Entity\Ambient\Bird\BirdController.cs" />
      <Compile Include="Assets\Scripts\Entity\Player\AttackType.cs" />
      <Compile Include="Assets\Scripts\Helpers\Mask\MetroidLayerMask.cs" />
      <Compile Include="Assets\Scripts\CollisionDirection.cs" />
@@ -82,8 +84,6 @@
      <Compile Include="Assets\Scripts\Helpers\MetroidEventArgs.cs" />
      <Compile Include="Assets\Scripts\Entity\Hitbox\HitboxEventSend.cs" />
      <Compile Include="Assets\Scripts\Entity\Enemy\EnemyWallBounce.cs" />
-     <Compile Include="Assets\Scripts\Entity\Ambient\Bird\BirdController.cs" />
-     <Compile Include="Assets\Scripts\Entity\Ambient\AmbientController.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
