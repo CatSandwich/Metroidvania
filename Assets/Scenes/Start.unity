@@ -134,8 +134,8 @@ GameObject:
   - component: {fileID: 61915133}
   - component: {fileID: 61915137}
   - component: {fileID: 61915136}
-  - component: {fileID: 61915135}
   - component: {fileID: 61915134}
+  - component: {fileID: 61915135}
   m_Layer: 13
   m_Name: Trigger
   m_TagString: Untagged
@@ -180,10 +180,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 61915132}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af22580997372240adc0cafe3ebc2a4, type: 3}
+  m_Script: {fileID: 11500000, guid: acf5a05ba86b5b54bbab89e1708c4b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hits: []
+  Hits:
+  - Player
   Damage: 5
   OneHit: 0
   Verbose: 0
@@ -986,8 +987,8 @@ GameObject:
   - component: {fileID: 666654234}
   - component: {fileID: 666654238}
   - component: {fileID: 666654237}
-  - component: {fileID: 666654235}
   - component: {fileID: 666654236}
+  - component: {fileID: 666654235}
   m_Layer: 12
   m_Name: Trigger
   m_TagString: Untagged
@@ -1018,11 +1019,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 666654233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6de9deef60cd514ebad7e05b6ecf65b, type: 3}
+  m_Script: {fileID: 11500000, guid: acf5a05ba86b5b54bbab89e1708c4b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hits: []
-  Damage: 0
+  Hits:
+  - Player
+  Damage: 5
   OneHit: 0
   Verbose: 0
 --- !u!114 &666654236
@@ -1140,8 +1142,8 @@ GameObject:
   - component: {fileID: 822902600}
   - component: {fileID: 822902601}
   - component: {fileID: 822902603}
-  - component: {fileID: 822902602}
   - component: {fileID: 822902604}
+  - component: {fileID: 822902602}
   m_Layer: 11
   m_Name: Trigger
   m_TagString: Untagged
@@ -1198,7 +1200,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 822902599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10e35f1a9607b0a46ab694ff636a3463, type: 3}
+  m_Script: {fileID: 11500000, guid: acf5a05ba86b5b54bbab89e1708c4b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Hits:
@@ -1879,8 +1881,8 @@ GameObject:
   - component: {fileID: 1434422749}
   - component: {fileID: 1434422745}
   - component: {fileID: 1434422748}
-  - component: {fileID: 1434422747}
   - component: {fileID: 1434422746}
+  - component: {fileID: 1434422747}
   m_Layer: 14
   m_Name: Trigger
   m_TagString: Untagged
@@ -1937,11 +1939,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1434422744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f627d1bf9648d9b45a7f06aa5c024e96, type: 3}
+  m_Script: {fileID: 11500000, guid: acf5a05ba86b5b54bbab89e1708c4b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageIndicator: {fileID: 1787599339852238227, guid: ff4366fd1af1bc846b9984b29dd526cc, type: 3}
-  HitboxCooldown: 0
+  Hits:
+  - Player
+  Damage: 5
+  OneHit: 0
+  Verbose: 0
 --- !u!50 &1434422748
 Rigidbody2D:
   serializedVersion: 4
