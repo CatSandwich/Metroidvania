@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Entity.Hitbox
 {
-    public abstract class HitboxSender : MonoBehaviour
+    public class HitboxSender : MonoBehaviour
     {
         public string[] Hits;
         public int Damage;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Animators
 {
-    public class BackgroundAnimator : MonoBehaviour
+    class BackgroundAnimator : MonoBehaviour
     {
         public int Repeats;
         public GameObject[] Layers;
@@ -46,8 +46,9 @@ namespace Animators
             {
                 var l = Layers[i];
                 var v3 = _startPositions[i];
-                v3.x += _player.transform.position.x * i / (Layers.Length - 1);
-                v3.y += _player.transform.position.y * i / (Layers.Length - 1);
+                var position = _player.transform.position;
+                v3.x += position.x * i / (Layers.Length - 1);
+                v3.y += position.y * i / (Layers.Length - 1);
                 l.transform.position = v3;
             }
         }

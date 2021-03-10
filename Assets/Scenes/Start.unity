@@ -166,12 +166,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 61915132}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adf53f1022ae79c4787f13c1465d2b69, type: 3}
+  m_Script: {fileID: 11500000, guid: cd5d98e3f9a4b474fab8db644213f429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DamageIndicator: {fileID: 1787599339852238227, guid: ff4366fd1af1bc846b9984b29dd526cc, type: 3}
-  HitboxCooldown: 2
-  Controller: {fileID: 487565892}
+  HitboxCooldown: 1
 --- !u!114 &61915135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,9 +247,8 @@ GameObject:
   - component: {fileID: 67630857}
   - component: {fileID: 67630855}
   - component: {fileID: 67630854}
-  - component: {fileID: 67630856}
-  - component: {fileID: 67630858}
   - component: {fileID: 67630859}
+  - component: {fileID: 67630856}
   m_Layer: 3
   m_Name: Slime
   m_TagString: Untagged
@@ -380,15 +378,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 67630851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dca142f4c2fa77341adf49189e29feb4, type: 3}
+  m_Script: {fileID: 11500000, guid: f6d3661c0093d4244bf4aea37a441d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TriggerBc: {fileID: 822902601}
   DeathAnimation: {fileID: 7400000, guid: 28200ed9044bebd4481d8bebdfd6115c, type: 2}
-  Animator: {fileID: 67630857}
-  Speed: 3
-  MaxHealth: 15
-  StartDirection: -1
+  StartingHealth: 15
+  StartingDirection: 1
+  Speed: 5
 --- !u!95 &67630857
 Animator:
   serializedVersion: 3
@@ -408,18 +404,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &67630858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 67630851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 993e6e4136765f8408a91f5e984f1464, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &67630859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,7 +618,6 @@ GameObject:
   - component: {fileID: 409712564}
   - component: {fileID: 409712563}
   - component: {fileID: 409712562}
-  - component: {fileID: 409712561}
   - component: {fileID: 409712560}
   m_Layer: 3
   m_Name: Spider
@@ -652,26 +635,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 409712559}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 650965ae6f5ffde4aaca919c3af5dfc3, type: 3}
+  m_Script: {fileID: 11500000, guid: f6d3661c0093d4244bf4aea37a441d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DeathAnimation: {fileID: 7400000, guid: 1fd1a149be1032f42b76cf5802149548, type: 2}
-  Speed: 1
-  StartDirection: 1
   StartingHealth: 5
---- !u!114 &409712561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 409712559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c9e5285b8d091c43bb24942df15ef2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TriggerBC: {fileID: 1434422745}
+  StartingDirection: -1
+  Speed: 5
 --- !u!95 &409712562
 Animator:
   serializedVersion: 3
@@ -837,7 +807,6 @@ GameObject:
   - component: {fileID: 487565886}
   - component: {fileID: 487565885}
   - component: {fileID: 487565891}
-  - component: {fileID: 487565892}
   m_Layer: 3
   m_Name: Shield Skeleton
   m_TagString: Untagged
@@ -999,26 +968,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 487565884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5302f8825ddd93048a992bb94d6324b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TriggerBC: {fileID: 61915137}
---- !u!114 &487565892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 487565884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbb16d43644cf5746a2715a84be17b03, type: 3}
+  m_Script: {fileID: 11500000, guid: f6d3661c0093d4244bf4aea37a441d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DeathAnimation: {fileID: 7400000, guid: 4aca1ec04a8bdf94797a16c2e9b41134, type: 2}
+  StartingHealth: 15
+  StartingDirection: 1
   Speed: 3
-  StartDirection: 1
-  StartingHealth: 5
 --- !u!1 &666654233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,8 +986,8 @@ GameObject:
   - component: {fileID: 666654234}
   - component: {fileID: 666654238}
   - component: {fileID: 666654237}
-  - component: {fileID: 666654236}
   - component: {fileID: 666654235}
+  - component: {fileID: 666654236}
   m_Layer: 12
   m_Name: Trigger
   m_TagString: Untagged
@@ -1078,12 +1034,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 666654233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b5ffa13a37e8a4db45bf72d8e2626c, type: 3}
+  m_Script: {fileID: 11500000, guid: cd5d98e3f9a4b474fab8db644213f429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DamageIndicator: {fileID: 1787599339852238227, guid: ff4366fd1af1bc846b9984b29dd526cc, type: 3}
-  HitboxCooldown: 0
-  Controller: {fileID: 1574110422}
+  HitboxCooldown: 0.5
 --- !u!50 &666654237
 Rigidbody2D:
   serializedVersion: 4
@@ -1281,12 +1236,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 822902599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9450d2a73c1782469b76cdc6fb0e260, type: 3}
+  m_Script: {fileID: 11500000, guid: cd5d98e3f9a4b474fab8db644213f429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DamageIndicator: {fileID: 1787599339852238227, guid: ff4366fd1af1bc846b9984b29dd526cc, type: 3}
   HitboxCooldown: 0.5
-  Controller: {fileID: 67630856}
 --- !u!1001 &1415394525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1969,9 +1923,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1434422744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36fd8d198c5b3a244a26f27a47f1412a, type: 3}
+  m_Script: {fileID: 11500000, guid: cd5d98e3f9a4b474fab8db644213f429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamageIndicator: {fileID: 1787599339852238227, guid: ff4366fd1af1bc846b9984b29dd526cc, type: 3}
+  HitboxCooldown: 0.5
 --- !u!114 &1434422747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1986,7 +1942,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageIndicator: {fileID: 1787599339852238227, guid: ff4366fd1af1bc846b9984b29dd526cc, type: 3}
   HitboxCooldown: 0
-  Controller: {fileID: 409712560}
 --- !u!50 &1434422748
 Rigidbody2D:
   serializedVersion: 4
@@ -2187,7 +2142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574110415}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.38, y: 3.02, z: 1}
+  m_LocalPosition: {x: -6.38, y: 1.47, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 666654234}
@@ -2203,12 +2158,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1574110415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5130c9edfc1b1ee4186f245f7785c0a3, type: 3}
+  m_Script: {fileID: 11500000, guid: f6d3661c0093d4244bf4aea37a441d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 5
-  Speed: 4
-  StartDirection: 1
+  DeathAnimation: {fileID: 7400000, guid: 59585e632ee70fa45af0104e7f173a5b, type: 2}
+  StartingHealth: 5
+  StartingDirection: 1
+  Speed: 3
 --- !u!4 &1706075424 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6288003390652603630, guid: 6ad15aa41fb5ff841a53c03ba0f80fa4, type: 3}

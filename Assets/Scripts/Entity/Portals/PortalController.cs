@@ -25,8 +25,8 @@ namespace Entity.Portals
         {
             if (!_isInit) Init();
         }
-    
-        public override void PlayerInteract(object sender, EntityInteractEventArgs e)
+
+        protected override void PlayerInteract(object sender, EntityInteractEventArgs e)
         {
             SceneManager.LoadScene(DestinationLevel);
         }

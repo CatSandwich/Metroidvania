@@ -12,7 +12,7 @@ namespace Entity
 
         private bool _isInit = false;
 
-        public abstract void PlayerInteract(object sender, EntityInteractEventArgs e);
+        protected abstract void PlayerInteract(object sender, EntityInteractEventArgs e);
 
         private void OnTriggerEnter2D(Collider2D other)
         {
