@@ -1,13 +1,13 @@
+using Entity.Enemy.Base;
 using Entity.Hitbox;
-
 
 namespace Entity.Enemy.Spider 
 { 
     public class SpiderReceiver : HitboxReceiver 
     {
-        public SpiderController Controller;
-        public override void TakeDamage(int damage) => Controller.TakeDamage(damage);
-
+        public EnemyController Controller => _controller ??= GetComponentInParent<EnemyController>();
+        private EnemyController _controller;
+        public override void TakeDamage(int damage) => Controller.Health -= damage;
     } 
 
 }

@@ -1065,6 +1065,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6de9deef60cd514ebad7e05b6ecf65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hits: []
+  Damage: 0
+  OneHit: 0
+  Verbose: 0
 --- !u!114 &666654236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1077,7 +1081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b5ffa13a37e8a4db45bf72d8e2626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageIndicator: {fileID: 0}
+  DamageIndicator: {fileID: 1787599339852238227, guid: ff4366fd1af1bc846b9984b29dd526cc, type: 3}
   HitboxCooldown: 0
   Controller: {fileID: 1574110422}
 --- !u!50 &666654237

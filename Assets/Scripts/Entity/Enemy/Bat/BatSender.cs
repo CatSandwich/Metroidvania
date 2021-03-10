@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Entity.Hitbox;
 
-public class BatSender : MonoBehaviour
+public class BatSender : HitboxSender
 {
     // Start is called before the first frame update
     void Start()
