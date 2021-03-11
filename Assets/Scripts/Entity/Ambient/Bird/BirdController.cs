@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using Helpers.Mask;
 using UnityEngine;
+using Random = System.Random;
 
 namespace Entity.Ambient.Bird
 {
@@ -22,8 +24,15 @@ namespace Entity.Ambient.Bird
             get => _isGrounded;
             set
             { 
+                // Set value into backing field
                 _isGrounded = value;
+                // If bird lands, it is done landing so it is no longer in the process of landing
+                // If it takes off, it's no longer landing
+                // Either way it should be set to false
+                _isLanding = false;
+                // Inform the animator
                 Animator.SetBool("IsGrounded", _isGrounded);
+                // Set y velocity to 0
                 if (_isGrounded) RB.velocity *= new Vector2(1f, 0f);
             }
         }
@@ -34,14 +43,31 @@ namespace Entity.Ambient.Bird
         // Everything is normal except setting the value also informs the animator
         private float WingSpeed
         {
-            get => _wingSpeed;
             set
             {
-                _wingSpeed = value;
-                Animator.SetFloat("WingSpeed", _wingSpeed);
+                Animator.SetFloat("WingSpeed", value);
             }
         }
-        private float _wingSpeed = 1f;
+
+        public Vector2 LandSpeed;
+        public float MinHeightToLand;
+
+        private SpriteRenderer _sr;
+        
+        private readonly Random _random = new Random();
+        private bool _isLanding = false;
+
+        public new void Start()
+        {
+            base.Start();
+            _sr = GetComponent<SpriteRenderer>();
+        }
+        
+        public new void Update()
+        {
+            base.Update();
+            _tryLand();
+        }
         
         // Listen for collisions that would ground the bird
         public void OnCollisionEnter2D(Collision2D other)
@@ -67,6 +93,43 @@ namespace Entity.Ambient.Bird
             
             var direction = playerTransform.position.x > transform.position.x ? -1f : 1f;
             RB.velocity = new Vector2(5f * direction, 2f);
+        }
+
+        // Should the bird land
+        private void _tryLand()
+        {
+            if (IsGrounded) return;
+            if (_isLanding) return;
+            if (IsReactingToPlayer) return;
+            if (_random.Next(0, 250) != 0) return;
+
+            var mask = TerrainMask;
+            var hit = Physics2D.Raycast(transform.position, Vector2.down, Single.PositiveInfinity, mask.LayerMask);
+            if (!hit.collider) return;
+            if (hit.distance < MinHeightToLand) return;
+
+            _isLanding = true;
+            StartCoroutine(_land(hit.point));
+        }
+
+        // Land
+        private IEnumerator _land(Vector2 destination)
+        {
+            var direction = RB.velocity.x < 0f ? -1 : 1;
+            var distance = transform.position.y - destination.y - _sr.sprite.bounds.size.y / 2;
+
+            var timeStart = Time.time;
+            var deltaTime = distance / LandSpeed.y;
+            
+            while (!IsGrounded)
+            {
+                var timePassed = Time.time - timeStart;
+                var xVel = Mathf.Cos(timePassed / deltaTime * Mathf.PI) * direction;
+                RB.velocity = new Vector2(xVel * LandSpeed.x, -LandSpeed.y);
+                yield return new WaitForEndOfFrame();
+            }
+
+            RB.velocity *= new Vector2(0f, 0f);
         }
     }
 }

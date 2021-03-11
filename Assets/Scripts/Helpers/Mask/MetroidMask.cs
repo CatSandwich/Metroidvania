@@ -10,16 +10,16 @@ namespace Helpers.Mask
         private bool? _hasBoth;
         public bool HasEither => _hasEither ??= HasTag || HasLayer;
         private bool? _hasEither;
-        public bool HasLayer => _hasLayer ??= _layerMask.Contains(_go.layer);
+        public bool HasLayer => _hasLayer ??= LayerMask.Contains(_go.layer);
         private bool? _hasLayer;
-        public bool HasTag => _hasTag ??= _tagMask.Contains(_go.tag);
+        public bool HasTag => _hasTag ??= TagMask.Contains(_go.tag);
         private bool? _hasTag;
         #endregion
 
         #region Fields
 
-        private readonly MetroidLayerMask _layerMask;
-        private readonly MetroidTagMask _tagMask;
+        public readonly MetroidLayerMask LayerMask;
+        public readonly MetroidTagMask TagMask;
 
         public GameObject GO
         {
@@ -36,20 +36,20 @@ namespace Helpers.Mask
         #region Constructors
         public MetroidMask([CanBeNull] MetroidLayerMask layerMask, [CanBeNull] MetroidTagMask tagMask = null, GameObject go = null)
         {
-            _layerMask = layerMask ?? ~0;
-            _tagMask = tagMask ?? new string[]{};
+            LayerMask = layerMask ?? ~0;
+            TagMask = tagMask ?? new string[]{};
             _go = go;
         }
         #endregion
 
         #region Modifiers
-        public void AddLayer(string layer) => _layerMask.Add(layer);
-        public void AddLayer(int layer) => _layerMask.Add(layer);
-        public void AddTag(string tag) => _layerMask.Add(tag);
+        public void AddLayer(string layer) => LayerMask.Add(layer);
+        public void AddLayer(int layer) => LayerMask.Add(layer);
+        public void AddTag(string tag) => LayerMask.Add(tag);
 
-        public void RemoveLayer(string layer) => _layerMask.Remove(layer);
-        public void RemoveLayer(int layer) => _layerMask.Remove(layer);
-        public void RemoveTag(string tag) => _tagMask.Remove(tag);
+        public void RemoveLayer(string layer) => LayerMask.Remove(layer);
+        public void RemoveLayer(int layer) => LayerMask.Remove(layer);
+        public void RemoveTag(string tag) => TagMask.Remove(tag);
 
         private void _resetCache()
         {
@@ -61,8 +61,8 @@ namespace Helpers.Mask
         #endregion
 
         #region Implicit Operators
-        public static implicit operator MetroidLayerMask(MetroidMask mask) => mask._layerMask;
-        public static implicit operator MetroidTagMask(MetroidMask mask) => mask._tagMask;
+        public static implicit operator MetroidLayerMask(MetroidMask mask) => mask.LayerMask;
+        public static implicit operator MetroidTagMask(MetroidMask mask) => mask.TagMask;
         #endregion
     }
 }

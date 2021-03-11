@@ -169,8 +169,9 @@ MonoBehaviour:
   - Bat
   - Shield Skeleton
   - Spider
+  - Ambient
   Damage: 5
   OneHit: 0
-  Verbose: 0
+  Verbose: 1
   Animator: {fileID: 7658098964037294601}
   AttackAnimation: {fileID: 7400000, guid: cf2a53c07ea58634e9102d1536041475, type: 2}

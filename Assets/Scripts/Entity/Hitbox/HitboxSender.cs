@@ -35,19 +35,19 @@ namespace Entity.Hitbox
 
         public virtual void OnTriggerStay2D(Collider2D other)
         {
-            //_verbose($"[Verbose] {gameObject.name}: Trigger stay. Other: {other.gameObject.name}");
+            _verbose($"[Verbose] {gameObject.name}: Trigger stay. Other: {other.gameObject.name}");
 
             _mask.GO = other.gameObject;
             if (!_mask.HasLayer) return;
             
-            //_verbose($"[Verbose] {gameObject.name}: Triggered layer in hit list");
+            _verbose($"[Verbose] {gameObject.name}: Triggered layer in hit list");
 
             var e = new SendHitEventArgs(Damage);
-            //_verbose($"[Verbose] {gameObject.name}: Invoking event");
+            _verbose($"[Verbose] {gameObject.name}: Invoking event");
             SendHit?.Invoke(this, e);
             if (!e.Default) return;
 
-            //_verbose($"[Verbose] {gameObject.name}: Sending hit to receiver");
+            _verbose($"[Verbose] {gameObject.name}: Sending hit to receiver");
             var hit = other.gameObject.GetComponent<HitboxReceiver>()?.OnReceiveHit(e.Damage);
             //TODO: separate hit into two events, one for before sending, one for if successful
         }
