@@ -38,7 +38,8 @@ namespace Entity.Hitbox
             _verbose($"[Verbose] {gameObject.name}: Trigger stay. Other: {other.gameObject.name}");
 
             _mask.GO = other.gameObject;
-            if (!_mask.HasLayer) return;
+            if (!_mask.HasLayer) 
+                return;
             
             _verbose($"[Verbose] {gameObject.name}: Triggered layer in hit list");
 

@@ -53,7 +53,9 @@ namespace Entity.Player
         public event EventHandler<EntityInteractEventArgs> EntityInteract;
         #endregion
 
-        #region Private Fields
+        #region Fields
+        public int Coins;
+        
         private short _jumps;
         private bool _isAttacking;
         private bool _isGrounded;

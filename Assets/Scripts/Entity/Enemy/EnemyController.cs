@@ -34,8 +34,6 @@ namespace Entity.Enemy.Base
 
         private bool _animatorHasSpeedX;
         private bool _animatorHasDeath;
-        [UsedImplicitly]
-        private bool _animatorHasAttack;
 
         // Start is called before the first frame update
         public void Start()
@@ -94,7 +92,7 @@ namespace Entity.Enemy.Base
                         _animatorHasDeath = true;
                         break;
                     case "Attack":
-                        _animatorHasAttack = true;
+                        //_animatorHasAttack = true;
                         break;
                     case "SpeedX":
                         _animatorHasSpeedX = true;
