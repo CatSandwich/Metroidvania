@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Entity\Ambient\Bird\BirdStateScared.cs" />
      <Compile Include="Assets\Scripts\Entity\Hitbox\HitboxReceiver.cs" />
      <Compile Include="Assets\Scripts\Entity\EntityController.cs" />
+     <Compile Include="Assets\Scripts\Entity\Ambient\Coin\CoinStateIdle.cs" />
      <Compile Include="Assets\Scripts\Helpers\Mask\MetroidTagMask.cs" />
      <Compile Include="Assets\Scripts\Entity\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Entity\Player\EventArgs\PlayerEventJump.cs" />
@@ -83,6 +84,7 @@
      <Compile Include="Assets\Scripts\Entity\Hitbox\HitboxEventReceive.cs" />
      <Compile Include="Assets\Scripts\Entity\Player\PlayerReceiver.cs" />
      <Compile Include="Assets\Scripts\Helpers\Mask\MaskTest.cs" />
+     <Compile Include="Assets\Scripts\Entity\Ambient\Coin\CoinController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Entity\Ambient\Bird\BirdControllerStateMachine.cs" />
      <Compile Include="Assets\Scripts\Helpers\Mask\MetroidMask.cs" />
@@ -93,8 +95,6 @@
      <Compile Include="Assets\Scripts\Helpers\MetroidEventArgs.cs" />
      <Compile Include="Assets\Scripts\Entity\Hitbox\HitboxEventSend.cs" />
      <Compile Include="Assets\Scripts\Entity\Enemy\EnemyWallBounce.cs" />
-     <Compile Include="Assets\Scripts\Entity\Ambient\Coin\CoinController.cs" />
-     <Compile Include="Assets\Scripts\Entity\Ambient\Coin\CoinStateIdle.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
